@@ -33,7 +33,7 @@ function playRound(humanChoice, compChoice) {
         switch(compChoice.toLowerCase()){
             case "rock":
                 console.log("You win! Paper beats rock");
-                humanChoice++;
+                humanScore++;
                 break;
 
             case "paper":
@@ -51,12 +51,12 @@ function playRound(humanChoice, compChoice) {
         switch(compChoice.toLowerCase()){
             case "rock":
                 console.log("Computer wins! Rock beats scissors");
-                compChoice++;
+                compScore++;
                 break;
 
             case "paper":
                 console.log("You win! Scissors beat paper");
-                humanChoice++;
+                humanScore++;
                 break;
 
             case "scissors":
