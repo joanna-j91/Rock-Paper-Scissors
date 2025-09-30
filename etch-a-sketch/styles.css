@@ -10,7 +10,7 @@ body{
 #sketch-area{
     display: flex;
     flex-wrap: wrap;
-    margin: 100px auto 10px auto;
+    margin: 20px auto 10px auto;
     background-color: white;
 }
 
@@ -18,8 +18,15 @@ body{
     border: 1px solid gray;
 }
 
-#slider-container{
-    margin: 0 auto;
+#slider-container {
+  margin-top: 15px;
+  width: 40%;          
+  text-align: center; 
+}
+
+#slider-value {
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 .slider{
@@ -34,10 +41,6 @@ body{
     transition: opacity .2s;
 }
 
-#slider-value{
-    margin: 0 auto;
-    text-align: center;
-}
 
 .slider:hover{
     opacity: 1;
@@ -57,4 +60,26 @@ body{
     height: 25px;
     background: #04AA6D;
     cursor: pointer;
+}
+
+#reset{
+    width: 50px;
+    height: 25px;
+    background-color: rgb(154, 185, 214);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px; 
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+#reset:hover{
+    background-color: rgb(86, 130, 171);
+}
+
+#full-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+  margin-top: 20px;
 }

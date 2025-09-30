@@ -6,6 +6,10 @@ const sliderContainer = document.querySelector("#slider-container");
 const slider = document.querySelector("#slider");
 const sliderValue = document.querySelector("#slider-value");
 
+const resetBtn =document.querySelector("#reset");
+
+resetBtn.addEventListener("click", cleanGrid());
+
 sliderValue.textContent = `${slider.value} x ${slider.value}`;
 sketchArea.style.width = sketchArea.style.height = `${GRID_SIZE}px`;
 
@@ -45,6 +49,10 @@ slider.oninput = function () {
     sliderValue.innerHTML = txt;
     removeCells();
     createGrid(this.value);
+}
+
+function cleanGrid(){
+    createGrid(slider.value);
 }
 
 createGrid(16);
