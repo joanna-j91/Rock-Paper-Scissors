@@ -10,6 +10,7 @@ sliderValue.textContent = `${slider.value} x ${slider.value}`;
 sketchArea.style.width = sketchArea.style.height = `${GRID_SIZE}px`;
 
 function createGrid(squaresPerSide){
+    numSquares = squaresPerSide;
     const width = `${(GRID_SIZE/numSquares) - 2}px`;
     for(let i = 0 ; i < (numSquares * numSquares) ; i++){
         const gridCell = document.createElement("div");
@@ -24,10 +25,19 @@ function createGrid(squaresPerSide){
     }
 }
 
-createGrid(16);
+
 
 function removeCells(){
     while(sketchArea.firstChild){
         sketchArea.removeChild(sketchArea.firstChild);
     }
 }
+
+slider.oninput = function () {
+    let txt= `${this.value} x ${this.value}`;
+    sliderValue.innerHTML = txt;
+    removeCells();
+    createGrid(this.value);
+}
+
+createGrid(16);
