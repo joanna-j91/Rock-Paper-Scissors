@@ -9,9 +9,16 @@ const sliderValue = document.querySelector("#slider-value");
 sliderValue.textContent = `${slider.value} x ${slider.value}`;
 sketchArea.style.width = sketchArea.style.height = `${GRID_SIZE}px`;
 
+function randomizeColour(){
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    return `#${randomColor.padStart(6, '0')}`;
+}
+
+
 function createGrid(squaresPerSide){
     numSquares = squaresPerSide;
     const width = `${(GRID_SIZE/numSquares) - 2}px`;
+
     for(let i = 0 ; i < (numSquares * numSquares) ; i++){
         const gridCell = document.createElement("div");
         
@@ -21,7 +28,7 @@ function createGrid(squaresPerSide){
 
         sketchArea.appendChild(gridCell);
 
-        gridCell.addEventListener("mouseover", () => {gridCell.style.backgroundColor = "black"});
+        gridCell.addEventListener("mouseover", () => {gridCell.style.backgroundColor = randomizeColour()});
     }
 }
 
