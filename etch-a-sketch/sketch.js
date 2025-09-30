@@ -38,7 +38,6 @@ function createGrid(squaresPerSide){
 }
 
 
-
 function removeCells(){
     while(sketchArea.firstChild){
         sketchArea.removeChild(sketchArea.firstChild);
