@@ -8,7 +8,7 @@ const sliderValue = document.querySelector("#slider-value");
 
 const resetBtn =document.querySelector("#reset");
 
-resetBtn.addEventListener("click", cleanGrid());
+resetBtn.addEventListener("click", cleanGrid);
 
 sliderValue.textContent = `${slider.value} x ${slider.value}`;
 sketchArea.style.width = sketchArea.style.height = `${GRID_SIZE}px`;
@@ -20,6 +20,7 @@ function randomizeColour(){
 
 
 function createGrid(squaresPerSide){
+    removeCells();
     numSquares = squaresPerSide;
     const width = `${(GRID_SIZE/numSquares) - 2}px`;
 
